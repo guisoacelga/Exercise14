@@ -21,6 +21,7 @@ public class Erdbeerland {
         System.out.println(mittleresGewichtReif(GEWICHTE, KLASSIFIZIERUNG));
         System.out.println(Arrays.toString(fülleBecher(KLASSIFIZIERUNG, 1)));
         System.out.println(Arrays.toString(fülleBecher(KLASSIFIZIERUNG, 2)));
+        System.out.println(becherNettoGewicht(GEWICHTE, fülleBecher(KLASSIFIZIERUNG, 0)));
 
     }
 
@@ -103,6 +104,11 @@ public class Erdbeerland {
     }
 
     public static double becherNettoGewicht(double[] gewichte, int[] becherFüllung) {
-        return 0;
+        double sumCup = 0;
+        for (int i = 0; i < becherFüllung.length; i++) {
+            sumCup = sumCup + gewichte[becherFüllung[i]];
+
+        }
+        return sumCup;
     }
 }
